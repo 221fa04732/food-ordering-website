@@ -52,7 +52,7 @@
               <i class="bx bx-shopping-bag"></i>
               <span>0</span>
             </div>
-            <a class="btn signin">Sign In</a>
+            <a class="btn signin">LogIn / SignIn</a>
           </div>
 
           <!-- Hamburger -->
@@ -81,7 +81,7 @@
               Food that is delivered at the right time. The trendy food delivery
               partner. Good food is what we deliver. Your hunger companion.
             </p>
-            <a href="" class="btn">Explore Food</a>
+            <a href="#recipes" class="btn">Explore Food</a>
           </div>
           <div class="col">
             <img src="./images/delivery-guy.svg" alt="" />
@@ -89,27 +89,27 @@
         </div>
       </div>
 
-      <!--=============== SignIn Form ===============-->
+      <!--=============== Login Form ===============-->
       <div class="wrapper">
         <form action="" class="form">
-          <h2>SIGN IN</h2>
+          <h2>LogIn</h2>
 
           <div class="control">
             <label for="">Enter Email:</label>
-            <input type="email" placeholder="Enter Your Email" />
+            <input id="email" type="email" placeholder="Enter Your Email" />
           </div>
           <div class="control">
             <label for="">Password:</label>
-            <input type="password" placeholder="Password" />
+            <input id="password" type="password" placeholder="Password" />
           </div>
           <div class="checkbox d-flex">
             <input type="checkbox" />
             <span>Remember Me</span>
           </div>
-          <button class="btn">Sign In</button>
+          <button type="submit" class="btn" onclick="login()">LogIn</button>
           <div class="links">
             <span>Forgot Password? <a href="">Click Here</a></span>
-            <span>Don't Have An Account? <a href="">Create One</a></span>
+            <span>Don't Have An Account? <a href="signin/signin.html" target="_blank">Create One</a></span>
           </div>
         </form>
 
@@ -215,23 +215,6 @@
         <div class="products">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper" id="products-wrapper">
-              <!-- <div class="swiper-slide">
-                <div class="card">
-                  <div class="image"><img src="./images/meat-2.svg" alt=""></div>
-                  <div class="rating">
-                  <span><i class="bx bxs-star"></i></span>
-                  <span><i class="bx bxs-star"></i></span>
-                  <span><i class="bx bxs-star"></i></span>
-                  <span><i class="bx bxs-star"></i></span>
-                  <span><i class="bx bxs-star"></i></span>
-                  </div>
-                  <h4>Crispy Fried Chicken</h4>
-                  <div class="price">
-                    <span>Price</span><span class="color">$13.00</span>
-                  </div>
-                  <div class="button">Add To Cart+</div>
-                </div>
-              </div> -->
             </div>
           </div>
           <div class="pagination">
@@ -440,5 +423,6 @@
     <script src="./js/testimonial.js"></script>
     <script src="./js/products.js"></script>
     <script src="./js/main.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
