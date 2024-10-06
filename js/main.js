@@ -1,4 +1,3 @@
-/* ========== Navigation =========== */
 const hamburger = document.querySelector(".hamburger");
 const close = document.querySelector(".nav-list .close");
 const menu = document.querySelector(".nav-list");
@@ -11,13 +10,6 @@ close.addEventListener("click", () => {
   menu.classList.remove("show");
 });
 
-/* ========== SignIn Form =========== */
-const signInForm = document.querySelector("header .wrapper");
-
-document.querySelector(".signin").onclick = () => {
-  signInForm.classList.add("active");
-};
-
-document.querySelector(".close-form").onclick = () => {
-  signInForm.classList.remove("active");
-};
+// fetch('result.json')
+//   .then(response => response.json())
+//   .then(data => console.log(data.name));

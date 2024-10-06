@@ -5,8 +5,10 @@ const { userdata } = require('./database');
 const { Uname,Uemail,Upassword,Uphone } = require('./type.js');
 app.use(express.json());
 
+const cors = require('cors');
+app.use(cors());
 
-app.get('/login', async (req, res) => {
+app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   const verifyEmail = Uemail.safeParse(email);
@@ -24,8 +26,7 @@ app.get('/login', async (req, res) => {
   if (!userFound) {
     return res.status(401).json({ message: 'Invalid credentials' });
   }
-
-  res.status(200).json({ message: 'Login successful' });
+  res.status(200).json({userFound});
 });
 
 
