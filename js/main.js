@@ -9,7 +9,3 @@ hamburger.addEventListener("click", () => {
 close.addEventListener("click", () => {
   menu.classList.remove("show");
 });
-
-// fetch('result.json')
-//   .then(response => response.json())
-//   .then(data => console.log(data.name));

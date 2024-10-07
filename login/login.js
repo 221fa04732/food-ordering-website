@@ -1,4 +1,3 @@
-// const fs = require('fs');
 const form = document.getElementById('userForm');
         
 form.addEventListener('submit', async (event) => {
@@ -23,17 +22,24 @@ form.addEventListener('submit', async (event) => {
 
         const result = await response.json();
         if (response.ok) {
-            console.log(result)
-            // fs.writeFile('./user.json', result, 'utf8', err => {});
+            const userdata={
+                name : result.userFound.name,
+                email : result.userFound.email,
+                password : result.userFound.password,
+                phone : result.userFound.phone
+            }
+            const jsonString = JSON.stringify(userdata);
+            localStorage.setItem('user', jsonString);
+            const retrievedJsonString = localStorage.getItem('user');
+            const retrievedUser = JSON.parse(retrievedJsonString);
             alert('Login Successful!');
-            // window.location.href ='http://127.0.0.1:5500/index.html';
+            window.location.href ='http://127.0.0.1:5500/personal_user_web/index.html';
         } else {
-            alert('Sign Up Failed!');
+            alert('Login Failed!');
         }
     } catch (error) {
-        alert('Error occured');
+        alert('Error occured'); 
     }
 });
-
 
 
