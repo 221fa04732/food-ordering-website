@@ -26,13 +26,17 @@ form.addEventListener('submit', async (event) => {
                 name : result.userFound.name,
                 email : result.userFound.email,
                 password : result.userFound.password,
-                phone : result.userFound.phone
+                phone : result.userFound.phone,
+                token : result.token,
+                verifytoken : result.verifytoken
+
             }
             const jsonString = JSON.stringify(userdata);
             localStorage.setItem('user', jsonString);
             const retrievedJsonString = localStorage.getItem('user');
             const retrievedUser = JSON.parse(retrievedJsonString);
             alert('Login Successful!');
+            alert(`token : ${retrievedUser.token}`);
             window.location.href ='http://127.0.0.1:5500/personal_user_web/index.html';
         } else {
             alert('Login Failed!');

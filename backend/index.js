@@ -1,4 +1,5 @@
 const express = require("express");
+const jwt = require("jsonwebtoken");
 const app = express();
 const port = 3000;
 const { userdata } = require('./database');
@@ -6,6 +7,7 @@ const { Uname,Uemail,Upassword,Uphone } = require('./type.js');
 app.use(express.json());
 
 const cors = require('cors');
+const JWT_SECRET = 'mrityunjay';
 app.use(cors());
 
 app.post('/login', async (req, res) => {
@@ -26,7 +28,11 @@ app.post('/login', async (req, res) => {
   if (!userFound) {
     return res.status(401).json({ message: 'Invalid credentials' });
   }
-  res.status(200).json({userFound});
+
+  const token = jwt.sign({ email}, JWT_SECRET);
+  const verifytoken = jwt.verify(token, JWT_SECRET);
+
+  res.status(200).json({userFound, token, verifytoken});
 });
 
 
