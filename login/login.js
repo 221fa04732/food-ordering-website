@@ -12,7 +12,7 @@ form.addEventListener('submit', async (event) => {
     };
 
     try {
-        const response = await fetch('http://localhost:3000/login', {
+        const response = await fetch('https://food-ordering-website-5qoc.onrender.com/login', {
             method: 'post', 
             headers: {
                 'Content-Type': 'application/json'  
