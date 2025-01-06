@@ -37,7 +37,7 @@ form.addEventListener('submit', async (event) => {
             const retrievedUser = JSON.parse(retrievedJsonString);
             alert('Login Successful!');
             alert(`token : ${retrievedUser.token}`);
-            window.location.href ='http://127.0.0.1:5500/personal_user_web/index.html';
+            window.location.href ='https://food-ordering-website-1-4zw3.onrender.com/personal_user_web/index.html';
         } else {
             alert('Login Failed!');
         }
