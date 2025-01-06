@@ -1,14 +1,17 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const app = express();
-const port = 3000;
+const dotenv = require('dotenv')
 const { userdata } = require('./database');
 const { Uname,Uemail,Upassword,Uphone } = require('./type.js');
 app.use(express.json());
+dotenv.config()
 
 const cors = require('cors');
-const JWT_SECRET = 'mrityunjay';
 app.use(cors());
+
+const port = process.env.PORT
+const JWT_SECRET = process.env.JWT_SECRET
 
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
@@ -60,5 +63,5 @@ app.post('/signin', async (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+  console.log(`Server is Listining`);
 });
